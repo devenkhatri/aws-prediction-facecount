@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react'
+import { Storage } from 'aws-amplify';
 
 function App() {
+  const [file, setFile] = useState();
+  const [uploaded, setUploaded] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="file" onChange={(e) => setFile(e.target.files[0])} />
+      <button onClick={async () => {
+        const storageResult = await Storage.put('faces.png', file, {
+          level: 'public',
+          type: 'image/png'
+        })
+        // Insert predictions code here later
+        setUploaded(true)
+        console.log(storageResult);
+      }}>Upload and count the number of faces in an image!</button>
+      <div>
+        {uploaded
+          ? <div>Your image is uploaded!</div>
+          : <div>Upload a photo to get started</div>}
+      </div>
     </div>
   );
 }
