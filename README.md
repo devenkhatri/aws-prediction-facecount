@@ -1,5 +1,7 @@
 # AWS Prediction Demo to check if the uploaded image contains a face
 
+Using [AWS Blog Reference](https://aws.amazon.com/blogs/mobile/use-an-existing-s3-bucket-for-your-amplify-project/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
