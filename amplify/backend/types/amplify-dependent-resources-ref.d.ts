@@ -9,5 +9,11 @@ export type AmplifyDependentResourcesAttributes = {
             "AppClientIDWeb": "string",
             "AppClientID": "string"
         }
+    },
+    "predictions": {
+        "identifyLabelsfcea0662": {
+            "region": "string",
+            "type": "string"
+        }
     }
 }

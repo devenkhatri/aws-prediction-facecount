@@ -15,8 +15,11 @@
       "auth": {
         "awspredictionfacecoua1597394": {}
       },
+      "predictions": {
+        "identifyLabelsfcea0662": {}
+      },
       "storage": {
-        "awspredictionfacecoud972230b": {
+        "awspredictionfacecoubc5512a9": {
           "bucketName": "facecount-bucket",
           "region": "us-east-1"
         }

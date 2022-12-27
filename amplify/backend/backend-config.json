@@ -1,32 +1,58 @@
 {
   "auth": {
     "awspredictionfacecoua1597394": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "socialProviders": [],
-        "usernameAttributes": [],
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
         ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
-      }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_storage_awspredictionfacecoubc5512a9_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "awspredictionfacecoubc5512a9"
+        }
+      ]
+    },
+    "AMPLIFY_storage_awspredictionfacecoubc5512a9_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "awspredictionfacecoubc5512a9"
+        }
+      ]
+    }
+  },
+  "predictions": {
+    "identifyLabelsfcea0662": {
+      "dependsOn": [],
+      "identifyType": "identifyLabels",
+      "providerPlugin": "awscloudformation",
+      "service": "Rekognition"
     }
   },
   "storage": {
-    "awspredictionfacecoud972230b": {
+    "awspredictionfacecoubc5512a9": {
       "service": "S3",
       "serviceType": "imported",
       "providerPlugin": "awscloudformation",
